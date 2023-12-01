@@ -1,6 +1,11 @@
 spring:
   application:
     name: web-service  # Identify this application
+    cloud:
+      config:
+        uri: http://localhost:8888
+        name: web-service
+        profile: default
 
 
 # HTTP Server
