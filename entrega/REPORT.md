@@ -6,11 +6,12 @@ Se han modificado los archivos:
  - accounts-service.yml
  - web-service.yml
 
-![Nuevo web](./img/account1.png)
-![Nuevo web](./img/account2.png)
+Lanzamos el discovery, config, accounts y servidor.
 
-![Nuevo web](./img/web1.png)
-![Nuevo web](./img/web2.png)
+Si realizamos una peticion del web al accounts podemos ver como no salta
+una extepcion, por lo tanto ambos estan corriendo.
+
+![Peticion del web al account](./img/peticion1.png)
 
 ## The service registration service has these two services registered
 
