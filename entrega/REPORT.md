@@ -11,7 +11,7 @@ Lanzamos el discovery, config, accounts y servidor.
 Si realizamos una peticion del web al accounts podemos ver como no salta
 una extepcion, por lo tanto ambos estan corriendo.
 
-![Peticion del web al account](./img/peticion1.png)
+![Peticion del web al account](./img/webPeticion1.png)
 
 ## The service registration service has these two services registered
 
@@ -19,19 +19,34 @@ una extepcion, por lo tanto ambos estan corriendo.
 
 ## Update the configuration repository so that the `accounts` service uses now the port 3333
 
-**link**
+<https://github.com/marcospg26/lab6-microservices-config-repo/commitf1e8b37fd09b3968bbd9c14a8b31f4f12a024bb7>
 
 ## Run a second instance of the `accounts` service using the new configuration. What happens?
 
-Se ve como sin parar la ejecucion hemos sido capaces de que se configure un
-accounts al puerto 3333.
+Se ve como sin parar la ejecucion hemos sido capaces de que se configure el nuevo accounts al puerto 3333, sin necesidad de cortar la ejecucion.
 
-![](./img/account3333.png)
+![imagen de los dos accounts](./img/account3333.png)
 
 ## What happens when you kill the service `accounts (2222)` and do requests to `web`?
 
-Que se desconecta y aparece como DOWN.
+Se desconecta y aparece como DOWN si matamos el account del puerto 2222.
 
-![](./img/accountDOWN.png)
+![se ve en el eureka el account caido](./img/accountDOWN.png)
+
+Si ahora realizamos otra peticion, nos respondera el account del puerto 
+3333, y como no salta nonguna excepcion podemos suponer que funciona 
+correctamente.
+
+![peticion del web al account del puerto 3333](./img/webPeticion2.png)
+
+Cambia el numero que nos devuelve por lo tanto nos responde un account
+distinto del de la primera peticion. 
 
 ## Can the web service provide information about the accounts again?. Why?
+
+Si, el web seguira  obteniendo informacion del account:
+
+![Informacion del account en el web](./img/accountDetails.png)
+
+Por que el cambio de confuguracion se ha realizaddo correctamente, por eso
+podra seguir obteniendo informacion.
