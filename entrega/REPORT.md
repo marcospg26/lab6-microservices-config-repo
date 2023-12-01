@@ -15,3 +15,22 @@ Se han modificado los archivos:
 ## The service registration service has these two services registered
 
 ![Eureka](./img/eureka.png)
+
+## Update the configuration repository so that the `accounts` service uses now the port 3333
+
+**link**
+
+## Run a second instance of the `accounts` service using the new configuration. What happens?
+
+Se ve como sin parar la ejecucion hemos sido capaces de que se configure un
+accounts al puerto 3333.
+
+![](./img/account3333.png)
+
+## What happens when you kill the service `accounts (2222)` and do requests to `web`?
+
+Que se desconecta y aparece como DOWN.
+
+![](./img/accountDOWN.png)
+
+## Can the web service provide information about the accounts again?. Why?
